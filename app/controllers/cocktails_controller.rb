@@ -16,7 +16,8 @@ class CocktailsController < ApplicationController
     end
   end
   def destroy
-    root to: "cocktails#index"
+    @cocktail.destroy
+    redirect_to cocktails_path
   end
 
   def show

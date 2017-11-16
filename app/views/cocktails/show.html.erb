@@ -1,15 +1,21 @@
 <div class="container">
   <div class="row">
-    <div class="col-md-4 col-offset-4"></div>
-<%= @cocktail.name%>
-<% @cocktail.doses.each do |t| %>
-  <%= t.description %>
-  <%= t.ingredient.name %>
-  <%= link_to 'Remove Dosage', dose_path, method: :delete, data: { confirm: 'Are you sure?' } %>
-<% end %>
-<div class="link">
-  <%= link_to "New Dose", new_cocktail_dose_path(@cocktail)  %>
-  <%= link_to "Back", cocktails_path %>
-</div>
-</div>
+    <div class="col-sm-6">
+      image place holder
+      <div class="link">
+        <%= link_to "New Dose", new_cocktail_dose_path(@cocktail), {class: "btn btn-primary"}  %>
+      <%= link_to "Back", cocktails_path, {class: "btn btn-info"} %>
+      <%= link_to 'Remove Cocktail', cocktail_path, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+    </div>
+    </div>
+    <div class="col-sm-6">
+      <h1><%= @cocktail.name%></h1>
+      <% @cocktail.doses.each do |t| %>
+       <h3> Ingredient: <%= t.ingredient.name %></h3>
+       <h3> Amount: <%= t.description %></h3>
+        <%= link_to 'Remove Dosage', dose_path, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+        <% end %>
+    </div>
+
+  </div>
 </div>
