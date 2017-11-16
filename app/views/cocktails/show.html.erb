@@ -1,9 +1,15 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-4 col-offset-4"></div>
 <%= @cocktail.name%>
 <% @cocktail.doses.each do |t| %>
   <%= t.description %>
   <%= t.ingredient.name %>
+  <%= link_to 'Remove Dosage', dose_path, method: :delete, data: { confirm: 'Are you sure?' } %>
 <% end %>
 <div class="link">
   <%= link_to "New Dose", new_cocktail_dose_path(@cocktail)  %>
-  <%= link_to 'Obliterate', @cocktail, method: :delete, data: { confirm: 'Are you sure?' } %>
+  <%= link_to "Back", cocktails_path %>
+</div>
+</div>
 </div>
