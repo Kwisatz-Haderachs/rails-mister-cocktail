@@ -5,8 +5,8 @@
         <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= c.photo ? (cl_image_path c.photo.path, height: 400, width: 600, crop: :fit) : 'https://kitt.lewagon.com/placeholder/cities/shanghai'%>')">
         <div class="card-name"><%= c.name %></div>
         <div class="card-description">
-        <%= link_to "Show Cocktail", cocktail_path(c), {class: "btn btn-primary"}  %>
-        <p>Just might kill you</p>
+        <p><%= link_to "This Cocktail", cocktail_path(c), {class: "btn btn-primary"}  %>
+        Just might kill you</p>
         </div>
       </div>
     </div>
