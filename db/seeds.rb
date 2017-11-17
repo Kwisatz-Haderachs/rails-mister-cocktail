@@ -8,5 +8,5 @@
 require 'faker'
 
 25.times do
-  Ingredient.create(name: Faker::Pokemon.move)
+  Ingredient.create(name: Faker::LeagueOfLegends.masteries)
 end

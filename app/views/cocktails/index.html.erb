@@ -1,18 +1,15 @@
-<div class="container">
+<div class="indus">
   <div class="row">
-<% @cocktails.each do |c| %>
-    <div class="col-sm-4">
-<div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://kitt.lewagon.com/placeholder/cities/shanghai');">
-<div class="card-name"><%= c.name %></div>
-<div class="card-description">
-  <%= link_to "Show Cocktail", cocktail_path(c), {class: "btn btn-primary"}  %>
-<p>Placeholder</p>
-</div>
-</div>
-</div>
-<% end %>
+    <% @cocktails.each do |c| %>
+      <div class="col-xs-12 col-sm-4">
+        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= c.photo ? (cl_image_path c.photo.path, height: 400, width: 600, crop: :fit) : 'https://kitt.lewagon.com/placeholder/cities/shanghai'%>')">
+        <div class="card-name"><%= c.name %></div>
+        <div class="card-description">
+        <%= link_to "Show Cocktail", cocktail_path(c), {class: "btn btn-primary"}  %>
+        <p>Just might kill you</p>
+        </div>
+      </div>
+    </div>
 
-</div>
-<%= link_to "Make a Cocktail", new_cocktail_path, {class: "btn btn-success"}  %>
-<br>
-</div>
+  <% end %>
+

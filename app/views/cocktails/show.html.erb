@@ -1,21 +1,19 @@
-<div class="container">
-  <div class="row">
-    <div class="col-sm-6">
-      image place holder
-      <div class="link">
-        <%= link_to "New Dose", new_cocktail_dose_path(@cocktail), {class: "btn btn-primary"}  %>
-      <%= link_to "Back", cocktails_path, {class: "btn btn-info"} %>
-      <%= link_to 'Remove Cocktail', cocktail_path, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
-    </div>
-    </div>
-    <div class="col-sm-6">
+<div class="rubicon" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.3) 0%, rgba(0,36,61,0.6) 20%), url('<%= image_path 'maxres.jpg', crop: :fill %>');">
+  <div class="columbia">
+      <% if @cocktail.photo? %>
+        <%= cl_image_tag @cocktail.photo.path, width: 600, height: 500, crop: :fill %>
+      <% end %>
       <h1><%= @cocktail.name%></h1>
+      <ul>
       <% @cocktail.doses.each do |t| %>
-       <h3> Ingredient: <%= t.ingredient.name %></h3>
-       <h3> Amount: <%= t.description %></h3>
-        <%= link_to 'Remove Dosage', dose_path, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+       <li> <h3> Ingredient: <%= t.ingredient.name %></h3></li>
+       <li><h3> Amount: <%= t.description %>  <%= link_to 'Remove Dosage', dose_path, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></h3></li>
         <% end %>
-    </div>
-
+      </ul>
+        <div class="link">
+        <%= link_to "New Dose", new_cocktail_dose_path(@cocktail), {class: "btn btn-primary"}  %>
+        <%= link_to "Back", cocktails_path, {class: "btn btn-info"} %>
+        <%= link_to 'Remove Cocktail', cocktail_path, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+      </div>
   </div>
 </div>

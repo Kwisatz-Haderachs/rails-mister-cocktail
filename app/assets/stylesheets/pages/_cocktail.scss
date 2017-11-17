@@ -1,7 +1,27 @@
-.container {
-  grid: inline;
+.rubicon {
+  width: 90%;
+  margin: 5%;
 }
 
 .link {
   padding: 10px;
+}
+
+.columbia {
+  text-align: center;
+
+}
+
+h3, h1 {
+  color: rgba(200, 200, 200, 0.9);
+  text-align: center;
+
+}
+
+li {
+  list-style: none;
+}
+
+img {
+  justify: center;
 }
