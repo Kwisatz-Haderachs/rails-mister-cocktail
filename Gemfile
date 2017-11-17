@@ -39,6 +39,7 @@ gem "font-awesome-sass"
 gem "autoprefixer-rails"
 gem 'attachinary', github: 'assembler/attachinary'
 gem 'jquery-fileupload-rails'
+gem 'jquery-rails'
 gem 'coffee-rails', '~> 4.2'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
